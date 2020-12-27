@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import io.builders.poc.alvaromerinogarcia.usersapp.domain.data.UserDto;
 
@@ -22,5 +23,8 @@ public interface UsersController {
 
     @GetMapping
     ResponseEntity<List<UserDto>> getUsers();
+    
+    @GetMapping("/findByName/{username}")
+    ResponseEntity<UserDto> existsUser(@PathVariable("username") String username);
 
 }

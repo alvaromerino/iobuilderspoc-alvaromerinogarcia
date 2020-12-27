@@ -1,5 +1,6 @@
 package io.builders.poc.alvaromerinogarcia.usersapp.rest;
 
+import java.util.Optional;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -41,6 +42,23 @@ public class UsersControllerImpl implements UsersController {
 	@Override
 	public ResponseEntity<List<UserDto>> getUsers() {
         return new ResponseEntity<>(usersService.getAllUsers(), HttpStatus.OK);
+	}
+	
+	@Override
+    public ResponseEntity<UserDto> existsUser(String username) {
+		List<UserDto> users = usersService.getAllUsers();
+		Optional<UserDto> optUserDto = users
+			.stream()
+			.filter(item -> item.getUsername().equals(username))
+			.findFirst();
+		
+		if (optUserDto.isPresent()) {
+			return new ResponseEntity<>(optUserDto.get(), HttpStatus.OK);
+		}
+		else {
+			return new ResponseEntity<>(null, HttpStatus.OK);
+		}
+		
 	}
 
 }
