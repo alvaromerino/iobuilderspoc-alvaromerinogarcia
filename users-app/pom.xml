@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+
+	<groupId>io.builders.poc.alvaromerinogarcia.usersapp</groupId>
+	<artifactId>users-app</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>users-app</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<modules>
+		<module>users-app-domain</module>
+		<module>users-app-core</module>
+		<module>users-app-memory-database</module>
+		<module>users-app-rest</module>
+		<module>users-app-starter</module>
+	</modules>
+
+	<properties>
+		<lombok.version>1.18.10</lombok.version>
+		<assertj-core.version>3.13.2</assertj-core.version>
+		<mockito-all.version>1.10.19</mockito-all.version>
+		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<mockito-junit-jupiter.version>3.1.0</mockito-junit-jupiter.version>
+        <spring-tx.version>5.2.2.RELEASE</spring-tx.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Inner dependencies -->
+			<dependency>
+				<groupId>io.builders.poc.alvaromerinogarcia.usersapp</groupId>
+				<artifactId>users-app-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.builders.poc.alvaromerinogarcia.usersapp</groupId>
+				<artifactId>users-app-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.builders.poc.alvaromerinogarcia.usersapp</groupId>
+				<artifactId>users-app-memory-database</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.builders.poc.alvaromerinogarcia.usersapp</groupId>
+				<artifactId>users-app-rest</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring-tx.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+				<optional>true</optional>
+			</dependency>
+
+			<!-- Test dependencies -->
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito-all.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-junit-jupiter</artifactId>
+				<version>${mockito-junit-jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${assertj-core.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>${junit-jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
