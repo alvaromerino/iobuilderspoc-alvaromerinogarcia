@@ -15,7 +15,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import io.builders.poc.alvaromerinogarcia.usersapp.domain.data.UserDto;
-import io.builders.poc.alvaromerinogarcia.usersapp.domain.exception.UserNotFoundException;
 import io.builders.poc.alvaromerinogarcia.usersapp.domain.port.UserPersistencePort;
 
 
