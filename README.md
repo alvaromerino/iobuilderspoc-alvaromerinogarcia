@@ -2,7 +2,7 @@
 
 This is a sample to build a mini poc using a microservices stack.
 
-We will have to perform actions and deposit accounts. All users can interact with all accounts. In this example users act like employees of a company that manages deposit accounts.
+We will have users to perform actions and deposit accounts. All users can interact with all accounts. In this example users act like employees of a company that manages deposit accounts.
 
 The eureka server will listen on the port 8761 and our gateway in the 8762 port
 
