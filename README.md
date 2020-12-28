@@ -4,6 +4,10 @@ This is a sample to build a mini poc using a microservices stack.
 
 We will have to perform actions and deposit accounts. All users can interact with all accounts. In this example users act like employees of a company that manages deposit accounts.
 
+The eureka server will listen on the port 8761 and our gateway in the 8762 port
+
+The endpoits will be explained in the attached video.
+
 # Diagram
 ![Diagram](./diagram.png)
 
@@ -71,5 +75,4 @@ This smart contract allow to anybody send money to deposit, but only the owner o
 - Testing (The project only contains two test classes in users-app project).
 
 > In users-app-core, a test mocking calls, etc. In users-app-domain, to check identity of a dto.
-
 
