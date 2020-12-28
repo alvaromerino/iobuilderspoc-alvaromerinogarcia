@@ -5,7 +5,7 @@ This is a sample to build a mini poc using a microservices stack.
 We will have to perform actions and deposit accounts. All users can interact with all accounts. In this example users act like employees of a company that manages deposit accounts.
 
 # Diagram
-![Diagram](./diagrams/diagram.png)
+![Diagram](./diagram.png)
 
 # Projects
 - eureka-server 
