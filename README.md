@@ -4,6 +4,9 @@ This is a sample to build a mini poc using a microservices stack.
 
 We will have to perform actions and deposit accounts. All users can interact with all accounts. In this example users act like employees of a company that manages deposit accounts.
 
+# Diagram
+![Diagram](./diagrams/diagram.png)
+
 # Projects
 - eureka-server 
 - zuul-server
@@ -58,6 +61,7 @@ This smart contract allow to anybody send money to deposit, but only the owner o
 - `cd deposits-app`
 - `mvn clean install`
 - `cd deposits-app-starter`
+- `mvn spring-boot:run`
 
 
 
